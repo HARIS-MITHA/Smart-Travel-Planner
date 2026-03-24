@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center gap-2">
           <Compass className="h-7 w-7 text-primary" />
           <span className="font-display text-xl font-bold text-foreground">
-            Smart Travel Planner
+            TN Explorer
           </span>
         </Link>
 
