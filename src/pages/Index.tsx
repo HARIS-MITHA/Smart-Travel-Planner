@@ -100,9 +100,9 @@ const Index = () => {
         </div>
 
         {/* Destination Cards */}
-        <div className="mx-auto mt-16 max-w-4xl">
-          <h2 className="font-display text-2xl font-bold text-foreground text-center mb-8">Popular Destinations</h2>
-          <div className="grid gap-6 sm:grid-cols-3">
+        <div className="mx-auto mt-16 max-w-5xl">
+          <h2 className="font-display text-2xl font-bold text-foreground text-center mb-8">Popular Destinations ({destinations.length})</h2>
+          <div className="grid gap-5 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
             {destinations.map((d) => (
               <button
                 key={d.id}
@@ -111,13 +111,13 @@ const Index = () => {
                   destination === d.id ? "border-primary ring-2 ring-primary" : "border-border"
                 }`}
               >
-                <div className="relative h-44 overflow-hidden">
-                  <img src={d.image} alt={d.name} loading="lazy" width={640} height={512} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                <div className="relative h-32 overflow-hidden">
+                  <img src={d.image} alt={d.name} loading="lazy" width={640} height={480} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-                  <h3 className="absolute bottom-3 left-3 font-display text-xl font-bold text-primary-foreground">{d.name}</h3>
+                  <h3 className="absolute bottom-2 left-2 font-display text-base font-bold text-primary-foreground">{d.name}</h3>
                 </div>
-                <div className="bg-card p-3">
-                  <p className="text-sm text-muted-foreground line-clamp-2">{d.description}</p>
+                <div className="bg-card p-2">
+                  <p className="text-xs text-muted-foreground line-clamp-2">{d.description}</p>
                 </div>
               </button>
             ))}
