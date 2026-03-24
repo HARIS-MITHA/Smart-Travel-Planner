@@ -1,1 +1,1 @@
-# Smart Travel Planner – Tamil Nadu Explorer
+# Smart Travel Planner 
