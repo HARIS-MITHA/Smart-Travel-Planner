@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { MapPin, Bookmark, Compass } from "lucide-react";
+import { MapPin, Bookmark, Compass, User } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
