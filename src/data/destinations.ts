@@ -16,7 +16,7 @@ export interface Destination {
   checklist: string[];
 }
 
-const img = (query: string, id = 1) =>
+const img = (query: string, id: string | number = 1) =>
   `https://images.unsplash.com/photo-${id}?w=640&h=480&fit=crop&q=80`;
 
 export const destinations: Destination[] = [
