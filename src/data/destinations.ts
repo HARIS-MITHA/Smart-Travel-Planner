@@ -17,7 +17,7 @@ export interface Destination {
 }
 
 // Use picsum.photos with deterministic seed for reliable, unique images
-const img = (query: string, seed: number = 1) =>
+const img = (query: string, seed: string | number = 1) =>
   `https://picsum.photos/seed/${query}${seed}/640/480`;
 
 export const destinations: Destination[] = [
