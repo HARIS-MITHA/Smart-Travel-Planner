@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
-import { Compass, Mail, Lock } from "lucide-react";
+import { Mail, Lock } from "lucide-react"; // ❌ removed Compass
 import { Button } from "@/components/ui/button";
 
 const LoginPage = () => {
@@ -14,7 +14,10 @@ const LoginPage = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
-    if (!email || !password) { setError("All fields are required"); return; }
+    if (!email || !password) {
+      setError("All fields are required");
+      return;
+    }
     const err = login(email, password);
     if (err) setError(err);
     else navigate("/");
@@ -23,14 +26,24 @@ const LoginPage = () => {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="w-full max-w-md space-y-6 rounded-2xl border border-border bg-card p-8 shadow-xl">
+        
+        {/* 🔴 Header Section */}
         <div className="text-center">
-          <Compass className="mx-auto h-10 w-10 text-primary" />
-          <h1 className="mt-3 font-display text-2xl font-bold text-foreground">Welcome Back</h1>
-          <p className="text-sm text-muted-foreground">Login to TN Explorer</p>
+          {/* ❌ Compass icon removed */}
+          <h1 className="font-display text-2xl font-bold text-foreground">
+            Welcome Back
+          </h1>
+          <p className="text-sm text-muted-foreground">
+            Login to your account
+          </p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {error && <p className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">{error}</p>}
+          {error && (
+            <p className="rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+              {error}
+            </p>
+          )}
 
           <div>
             <label className="mb-1.5 flex items-center gap-2 text-sm font-medium text-foreground">
@@ -58,12 +71,19 @@ const LoginPage = () => {
             />
           </div>
 
-          <Button type="submit" size="lg" className="w-full text-base">Login</Button>
+          <Button type="submit" size="lg" className="w-full text-base">
+            Login
+          </Button>
         </form>
 
         <p className="text-center text-sm text-muted-foreground">
           New user?{" "}
-          <Link to="/signup" className="font-medium text-primary hover:underline">Signup</Link>
+          <Link
+            to="/signup"
+            className="font-medium text-primary hover:underline"
+          >
+            Signup
+          </Link>
         </p>
       </div>
     </div>
