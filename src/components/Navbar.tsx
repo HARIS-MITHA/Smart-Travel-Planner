@@ -1,10 +1,18 @@
-import { Link, useLocation } from "react-router-dom";
-import { MapPin, Bookmark, Compass, User } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { MapPin, Bookmark, Compass, User, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
+
+  const handleLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-md">
@@ -37,7 +45,7 @@ const Navbar = () => {
             }`}
           >
             <Bookmark className="h-4 w-4" />
-            Saved Trips
+            Saved
           </Link>
           <Link
             to="/profile"
@@ -48,8 +56,15 @@ const Navbar = () => {
             }`}
           >
             <User className="h-4 w-4" />
-            Profile
+            {user?.name?.split(" ")[0] || "Profile"}
           </Link>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
+          >
+            <LogOut className="h-4 w-4" />
+            Logout
+          </button>
         </div>
       </div>
     </nav>
