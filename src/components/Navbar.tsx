@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { MapPin, Bookmark, Compass } from "lucide-react";
+import { MapPin, Bookmark, Compass, User } from "lucide-react";
 
 const Navbar = () => {
   const location = useLocation();
@@ -38,6 +38,17 @@ const Navbar = () => {
           >
             <Bookmark className="h-4 w-4" />
             Saved Trips
+          </Link>
+          <Link
+            to="/profile"
+            className={`flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${
+              isActive("/profile")
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:bg-muted hover:text-foreground"
+            }`}
+          >
+            <User className="h-4 w-4" />
+            Profile
           </Link>
         </div>
       </div>
