@@ -16,7 +16,6 @@ const Checklist = ({ items }: ChecklistProps) => {
       return next;
     });
   };
-
   return (
     <div className="rounded-lg border border-border bg-card p-6">
       <div className="flex items-center gap-2 mb-4">

@@ -7,7 +7,6 @@ interface TripSummaryProps {
   budget: number;
   itinerary: Place[][];
 }
-
 const TripSummary = ({ destination, days, budget, itinerary }: TripSummaryProps) => {
   const totalPlaces = itinerary.reduce((sum, day) => sum + day.length, 0);
   const totalCost = itinerary.reduce(

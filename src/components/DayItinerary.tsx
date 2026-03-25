@@ -6,7 +6,6 @@ interface DayItineraryProps {
   places: Place[];
   onRemovePlace: (placeId: string) => void;
 }
-
 const DayItinerary = ({ day, places, onRemovePlace }: DayItineraryProps) => {
   return (
     <div className="rounded-lg border border-border bg-card p-4 animate-fade-in-up" style={{ animationDelay: `${day * 100}ms` }}>

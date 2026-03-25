@@ -11,7 +11,6 @@ interface AuthContextType {
   signup: (name: string, email: string, password: string) => string | null;
   logout: () => void;
 }
-
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const useAuth = () => {

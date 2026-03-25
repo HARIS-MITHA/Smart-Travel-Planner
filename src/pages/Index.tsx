@@ -4,7 +4,6 @@ import { MapPin, CalendarDays, IndianRupee, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { destinations } from "@/data/destinations";
 import heroImg from "@/assets/hero-travel.jpg";
-
 const Index = () => {
   const navigate = useNavigate();
   const [destination, setDestination] = useState("");

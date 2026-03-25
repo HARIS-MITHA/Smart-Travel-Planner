@@ -8,7 +8,6 @@ interface PlaceCardProps {
   onAdd?: () => void;
   onRemove?: () => void;
 }
-
 const PlaceCard = ({ place, isAdded, onAdd, onRemove }: PlaceCardProps) => {
   return (
     <div className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all hover:shadow-md animate-scale-in">
